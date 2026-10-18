@@ -26,7 +26,9 @@ The Week 1 article closes with the five questions I run through before building 
 | 4. Who gets paged? | `on_call.primary` in the card, used by `notify()` in `alerts.py` |
 | 5. How do you know it's right? | `correctness` in the card: `check_row_count`, `check_unique`, `check_not_null`, `check_allowed_values`, all run **before** the load |
 
-![The five questions](../assets/week1-pipeline-checklist.png)
+<p align="center">
+  <img src="../assets/week1-pipeline-checklist.png" alt="Before your next pipeline: five questions" width="420">
+</p>
 
 ## How it fits together
 

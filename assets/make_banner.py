@@ -79,7 +79,7 @@ def main() -> None:
     x0, x1, y = 760 * S, 1190 * S, 150 * S
     d.line([(x0, y), (x1, y)], fill=SLATE_DARK, width=4 * S)
     labels = ["Pipelines", "Batch vs stream", "Lakehouse", "Quality", "AI agents"]
-    small = font(a.font, 15, "SemiBold")
+    small = font(a.font, 16, "SemiBold")
     for i, label in enumerate(labels):
         cx = x0 + (x1 - x0) * i // 4
         r = 17 * S
@@ -88,7 +88,7 @@ def main() -> None:
         else:
             d.ellipse([cx - r, y - r, cx + r, y + r], fill=NAVY, outline=SLATE_DARK, width=3 * S)
         wk = f"W{i + 1}"
-        wf = font(a.font, 14, "Bold")
+        wf = font(a.font, 15, "Bold")
         d.text((cx - d.textlength(wk, font=wf) / 2, y - 9 * S), wk, font=wf, fill=WHITE if i == 0 else SLATE)
         d.text((cx - d.textlength(label, font=small) / 2, y + 30 * S), label, font=small,
                fill=TEAL_LIGHT if i == 0 else SLATE_DARK)
