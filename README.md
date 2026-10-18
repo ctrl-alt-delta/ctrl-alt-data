@@ -1,0 +1,130 @@
+<p align="center">
+  <img src="assets/banner.png" alt="CTRL+ALT+DATA: Rebooting Data Engineering. Companion code for the 5-week series by Kushagra Soni" width="100%">
+</p>
+
+# CTRL+ALT+DATA
+
+**Your pipeline ran green last night. Are the numbers right?**
+
+If you hesitated, this repo is for you.
+
+I'm Kushagra Soni, a Solutions Architect. I've run data platforms at a bank, which mostly teaches you what breaks, when it breaks, and who gets the phone call. CTRL+ALT+DATA is my five-week series on Medium about the job behind the dashboards. The articles explain the ideas. This repo is where you get your hands dirty. Each week comes with a small exercise you run on a laptop, break on purpose, and fix. Week 1 is ready now and takes under half an hour.
+
+Everything here runs offline with Python and three packages. All the data is synthetic.
+
+## A scenario you'll recognise
+
+*Made up, but only just.*
+
+On Friday, the team that sends you a daily payments file ships a small tidy-up: dates go from `2026-03-06` to `06/03/2026`. Nobody tells you, because to them it's cosmetic.
+
+Monday, 07:40, your job runs. Green tick. No errors. At 08:00 the dashboard refreshes and shows a strangely quiet week, about 40% fewer transactions than usual. By 08:05 someone in finance has posted a screenshot to a group chat with one word: "?"
+
+What happened? The parser couldn't read the new dates and turned them into nulls. The cleaning step did exactly what it was told and dropped every row without a date. Every line of code worked. The pipeline was still wrong.
+
+One check saying "expected at least 450 rows, got 291" would have stopped the load at 07:40 and paged one person, instead of surprising twenty at 08:05. In Week 1 you cause that incident yourself, in a sandbox, and then write the check.
+
+## The series
+
+| Week | Topic | Status | Article |
+|---|---|---|---|
+| [1](week1/) | **Pipelines, Prod & Panics**: what data engineers actually do | Exercise ready | _link coming_ |
+| [2](week2/) | **Batches, Streams & Screams**: batch vs streaming, ETL vs ELT | Scaffold | _link coming_ |
+| [3](week3/) | **Warehouses, Lakes & Lakehouses**: where Apache Iceberg fits | Scaffold | _link coming_ |
+| [4](week4/) | **Checks, Tests & Trust**: data quality, write-audit-publish | Scaffold | _link coming_ |
+| [5](week5/) | **Agents, Audits & Accountability**: AI agents on your data | Scaffold | _link coming_ |
+
+Article links get added here as each one is published.
+
+## Quickstart
+
+You need Python 3.10 or newer. On macOS and Linux:
+
+```bash
+git clone https://github.com/kushagrasoni/ctrl-alt-data.git
+cd ctrl-alt-data
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+python week1/run.py
+```
+
+On Windows (PowerShell), the same thing with Windows paths:
+
+```powershell
+git clone https://github.com/kushagrasoni/ctrl-alt-data.git
+cd ctrl-alt-data
+py -m venv .venv
+.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
+python week1/run.py
+```
+
+(In `cmd.exe`, activate with `.venv\Scripts\activate.bat` instead.)
+
+The last command builds the finished Week 1 pipeline and should end with `LOADED: 486 rows`. Now test it:
+
+```bash
+python -m pytest week1
+```
+
+**Prefer uv?** Swap the venv and pip lines for these, then activate `.venv` as above:
+
+```bash
+uv venv
+uv pip install -r requirements.txt
+```
+
+## Week 1 in four steps
+
+The full instructions, with the commands for each step, are in [week1/README.md](week1/README.md).
+
+1. **Warm-up (10 min, optional):** run the finished pipeline, hunt for the mess in the CSV, and answer the five questions in `pipeline_card.yaml`.
+2. **Main exercise (10 min):** finish `clean()` and `load()` in `week1/starter/pipeline.py`.
+3. **Break it (5 min):** `python week1/run.py --target starter --break date-format`, and watch it load the wrong numbers without complaint.
+4. **Fix it (10 min):** write the row count and freshness checks, replay the incident, and watch it stop.
+
+Experienced? There's a "go further" section with a schema contract, an allowed-values check and an alert hook.
+
+## The five questions
+
+Week 1 closes with the five questions I run through before building any pipeline. The exercise turns each one into something in the code: a field in the pipeline card, a check, or a decision the runner makes. The [mapping is in the Week 1 README](week1/README.md#the-five-questions-in-code).
+
+<p align="center">
+  <img src="assets/week1-pipeline-checklist.png" alt="Before your next pipeline: five questions" width="420">
+</p>
+
+## Starter vs solution
+
+Every week has the same two folders:
+
+- **`starter/`** is yours. It has the boring parts done and clear `TODO`s where the thinking goes.
+- **`solution/`** is my version. It passes every test.
+
+Commands default to the solution. Add `--target starter` to run or test your own code:
+
+```bash
+python week1/run.py --target starter                # run your pipeline
+python week1/run.py --check --target starter        # test it
+python -m pytest week1 --target starter -m core     # the same tests, plain pytest, one stage
+```
+
+Your starter tests will fail at first. That's the to-do list.
+
+## Repo layout
+
+```
+ctrl-alt-data/
+  week1/            the full exercise: starter/, solution/, tests/, run.py
+  week2/ - week5/   scaffolds for what's coming
+  assets/           banner (drawn by assets/make_banner.py) and the checklist graphic
+  requirements.txt  duckdb, pandas, pytest
+```
+
+## Contributing
+
+Found a bug, a confusing step, or a command that doesn't work on your machine? Open an issue and tell me your OS and Python version. Small fixes are welcome as pull requests: run `python -m pytest week1` first, and keep the starter's TODOs intact.
+
+## License
+
+[MIT](LICENSE). The code is yours to reuse. The data is synthetic, and so is every company, team and account in it.

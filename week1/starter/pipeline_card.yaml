@@ -1,0 +1,34 @@
+# Pipeline card: five questions, answered before the pipeline ships.
+# WARM-UP: replace every TODO. The runner reads this file, so the numbers you
+# pick here become the thresholds your checks enforce.
+# Run `python week1/run.py --check --stage warmup --target starter` when done.
+
+name: daily_transactions
+
+# 1. Where does the data come from?
+source:
+  system: TODO                       # what system produces the file?
+  owner: TODO                        # who warns you when the file changes? (any made-up team name)
+  format: CSV, one rolling file covering the last 5 business days
+  contract_columns: [txn_id, txn_date, account_id, amount, currency, merchant_category]
+
+# 2. How fresh does it need to be?
+freshness:
+  schedule: TODO                     # e.g. daily, before the 08:00 dashboard refresh
+  max_lag_days: TODO                 # a whole number: how many days behind as-of is still OK?
+
+# 3. What happens when it breaks?
+on_failure:
+  action: TODO                       # stop (do not load, keep yesterday's table) or warn (load anyway and alert)
+
+# 4. Who gets paged?
+on_call:
+  primary: TODO                      # one named person or rota. "everyone" is not an answer.
+  escalation: TODO
+
+# 5. How do you know it's right?
+correctness:
+  min_rows: TODO                     # a whole number: the fewest rows you'd believe on a normal day
+  unique_key: txn_id
+  not_null: [txn_id, txn_date, account_id, amount, currency]
+  allowed_currencies: [INR, USD, EUR, GBP]

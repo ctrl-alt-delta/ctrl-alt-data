@@ -1,0 +1,5 @@
+# Everything Week 1 needs. Once installed, nothing touches the network.
+# Lowest versions tested: duckdb 1.1.0, pandas 2.2.2, pytest 7.4.0 (on Python 3.10).
+duckdb>=1.1
+pandas>=2.2.2
+pytest>=7.4
