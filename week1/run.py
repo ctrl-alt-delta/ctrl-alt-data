@@ -52,7 +52,7 @@ def run_tests(target: str, stage: str | None) -> int:
     cmd = [sys.executable, "-m", "pytest", str(WEEK_DIR), "--target", target, "-q"]
     if stage:
         cmd += ["-m", stage]
-    print("running:", " ".join(cmd[1:]))
+    print("running: python", " ".join(cmd[1:]), flush=True)
     return subprocess.call(cmd, cwd=REPO_DIR)
 
 

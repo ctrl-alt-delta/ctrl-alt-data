@@ -32,7 +32,7 @@ def test_failure_action_is_a_decision(target):
 
 def test_someone_specific_gets_paged(target):
     primary = str(target.card["on_call"]["primary"]).strip().lower()
-    assert primary not in ("everyone", "all", "the team", "team", "nobody", ""), (
+    assert primary not in ("everyone", "all", "the team", "team", "nobody", "todo", ""), (
         "Q4: if the answer is everyone, it's no one. Name one person or rota."
     )
 
