@@ -1,14 +1,14 @@
-"""Generate the synthetic Week 1 transactions feed.
+"""Generate the Week 1 feed: a messy week of transactions from a partner.
 
 Everything here is made up: random account ids, random amounts, a fictional
 "partner payments" feed. No real customer, bank or company data.
 
 The output is fully determined by SEED. Only ``random.Random.random()`` is used,
 because that is the one method Python guarantees to reproduce for a given seed
-across versions, so the sample CSV is the same on every machine.
+across versions, so the raw CSV is the same on every machine.
 
 Usage:
-    python week1/data/generate.py                 # rewrite data/sample/transactions.csv
+    python week1/data/generate.py                 # rewrite data/raw/transactions.csv
     python week1/data/generate.py --break late    # print a broken feed to stdout
 """
 
@@ -41,7 +41,7 @@ N_NULL_AMOUNTS = 8
 N_DUPLICATES = 15
 BREAK_MODES = ("rename", "date-format", "late")
 
-SAMPLE_PATH = Path(__file__).resolve().parent / "sample" / "transactions.csv"
+RAW_PATH = Path(__file__).resolve().parent / "raw" / "transactions.csv"
 
 
 def _pick(rng: random.Random, seq):
@@ -153,7 +153,7 @@ def main(argv: list[str] | None = None) -> int:
     if args.break_mode and not args.out:
         sys.stdout.write(to_csv_text(generate(args.seed, args.break_mode)))
         return 0
-    out = write_csv(args.out or SAMPLE_PATH, args.seed, args.break_mode)
+    out = write_csv(args.out or RAW_PATH, args.seed, args.break_mode)
     print(f"wrote {out}")
     return 0
 

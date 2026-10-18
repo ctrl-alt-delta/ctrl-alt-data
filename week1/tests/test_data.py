@@ -1,4 +1,4 @@
-"""The synthetic feed itself. These tests do not depend on --target."""
+"""The feed itself. These tests do not depend on --target."""
 
 import csv
 
@@ -10,9 +10,9 @@ def read(path):
         return list(csv.reader(fh))
 
 
-def test_committed_sample_matches_the_seed():
-    assert read(gen.SAMPLE_PATH) == gen.generate(gen.SEED), (
-        "week1/data/sample/transactions.csv is out of date; run python week1/data/generate.py"
+def test_committed_raw_file_matches_the_seed():
+    assert read(gen.RAW_PATH) == gen.generate(gen.SEED), (
+        "week1/data/raw/transactions.csv is out of date; run python week1/data/generate.py"
     )
 
 

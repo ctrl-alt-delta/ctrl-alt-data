@@ -1,3 +1,3 @@
-# Keep the sample CSV byte-identical on every OS, so the seed test passes on Windows too.
+# Keep the raw CSV byte-identical on every OS, so the seed test passes on Windows too.
 *.csv -text
 *.png binary
