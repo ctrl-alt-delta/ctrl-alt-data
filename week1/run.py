@@ -101,8 +101,8 @@ def main(argv: list[str] | None = None) -> int:
     if result.latest_date:
         print(f"newest txn_date in this batch: {result.latest_date}")
     if result.status == "stopped":
-        kept = f"still {before} rows from the last good load" if before is not None else "no table yet"
-        print(f"STOPPED: {len(result.failures)} check(s) failed, nothing loaded. Warehouse: {kept}.")
+        kept = f"still {before} rows from the last load" if before is not None else "no table yet"
+        print(f"STOPPED: {len(result.failures)} problem(s) found, nothing loaded. Warehouse: {kept}.")
         return 1
     print(f"{result.status.upper()}: {result.rows_loaded} rows in table 'transactions' at {db_path}")
     if result.todo_checks:

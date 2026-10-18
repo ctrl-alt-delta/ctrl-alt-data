@@ -86,7 +86,7 @@ Over the "weekend", the upstream team changed the date format for the two most r
 python week1/run.py --target starter --break date-format
 ```
 
-Look closely. Your checks for row count and freshness show up as `TODO`, and the run ends with `LOADED: 291 rows`. No error, no crash, and 40% of the week gone. Look at the newest `txn_date` it reports too.
+Look closely. Your row count and freshness checks show up as `TODO`, and the run reports `LOADED: 291 rows`. No error, no crash, and 40% of the week gone. Check the newest `txn_date` it prints, too.
 
 Before you fix anything: which of the five questions would have caught this?
 
@@ -104,7 +104,7 @@ python week1/run.py --target starter
 python week1/run.py --target starter --break date-format
 ```
 
-The second run should end with `STOPPED` and `Warehouse: still 486 rows from the last good load`. Same bad file, but this time it never reached anyone. Try a late file too, where Friday's rows simply never arrive:
+The second run should end with `STOPPED` and `Warehouse: still 486 rows from the last load`. Same bad file, but this time it never reached anyone. Try a late file too, where Friday's rows simply never arrive:
 
 ```
 python week1/run.py --target starter --break late
