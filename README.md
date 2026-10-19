@@ -34,7 +34,7 @@ One check saying "expected at least 450 rows, got 291" would have stopped the lo
 | [4](week4/) | **Checks, Tests & Trust**: data quality, write-audit-publish | Coming soon | _link coming_ |
 | [5](week5/) | **Agents, Audits & Accountability**: AI agents on your data | Coming soon | _link coming_ |
 
-Article links get added here as each one is published.
+Article links get added here as each one is published. Follow the whole series on Medium: [CTRL+ALT+DATA reading list](https://medium.com/@sonikushagra/list/ctrlaltdata-rebooting-data-engineering-999754cc543a).
 
 ## Quickstart
 
