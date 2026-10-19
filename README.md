@@ -28,7 +28,7 @@ One check saying "expected at least 450 rows, got 291" would have stopped the lo
 
 | Week | Topic | Status | Article |
 |---|---|---|---|
-| [1](week1/) | **Pipelines, Prod & Panics**: what data engineers actually do | Exercise ready | _link coming_ |
+| [1](week1/) | **Pipelines, Prod & Panics**: what data engineers actually do | Exercise ready | [Read on Medium](https://medium.com/@sonikushagra/week-1-pipelines-prod-panics-f46c95d39f9a) |
 | [2](week2/) | **Batches, Streams & Screams**: batch vs streaming, ETL vs ELT | Coming soon | _link coming_ |
 | [3](week3/) | **Warehouses, Lakes & Lakehouses**: where Apache Iceberg fits | Coming soon | _link coming_ |
 | [4](week4/) | **Checks, Tests & Trust**: data quality, write-audit-publish | Coming soon | _link coming_ |
