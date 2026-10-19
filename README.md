@@ -8,7 +8,7 @@
 
 If you hesitated, this repo is for you.
 
-I'm Kushagra Soni, a Solutions Architect. I've run data platforms at a bank, which mostly teaches you what breaks, when it breaks, and who gets the phone call. CTRL+ALT+DATA is my five-week series on Medium about the job behind the dashboards. The articles explain the ideas. This repo is where you get your hands dirty. Each week comes with a small exercise you run on a laptop, break on purpose, and fix. Week 1 is ready now and takes under half an hour.
+I'm Kushagra Soni, a Solutions Architect. I design data and AI platforms for banks, which mostly teaches you what breaks, when it breaks, and who gets the phone call. CTRL+ALT+DATA is my five-week series on Medium about the job behind the dashboards. The articles explain the ideas. This repo is where you get your hands dirty. Each week comes with a small exercise you run on a laptop, break on purpose, and fix. Week 1 is ready now and takes under half an hour.
 
 Everything here runs offline with Python and three packages.
 
@@ -29,10 +29,10 @@ One check saying "expected at least 450 rows, got 291" would have stopped the lo
 | Week | Topic | Status | Article |
 |---|---|---|---|
 | [1](week1/) | **Pipelines, Prod & Panics**: what data engineers actually do | Exercise ready | _link coming_ |
-| [2](week2/) | **Batches, Streams & Screams**: batch vs streaming, ETL vs ELT | Scaffold | _link coming_ |
-| [3](week3/) | **Warehouses, Lakes & Lakehouses**: where Apache Iceberg fits | Scaffold | _link coming_ |
-| [4](week4/) | **Checks, Tests & Trust**: data quality, write-audit-publish | Scaffold | _link coming_ |
-| [5](week5/) | **Agents, Audits & Accountability**: AI agents on your data | Scaffold | _link coming_ |
+| [2](week2/) | **Batches, Streams & Screams**: batch vs streaming, ETL vs ELT | Coming soon | _link coming_ |
+| [3](week3/) | **Warehouses, Lakes & Lakehouses**: where Apache Iceberg fits | Coming soon | _link coming_ |
+| [4](week4/) | **Checks, Tests & Trust**: data quality, write-audit-publish | Coming soon | _link coming_ |
+| [5](week5/) | **Agents, Audits & Accountability**: AI agents on your data | Coming soon | _link coming_ |
 
 Article links get added here as each one is published.
 
@@ -118,7 +118,7 @@ Your starter tests will fail at first. That's the to-do list.
 ```
 ctrl-alt-data/
   week1/            the full exercise: starter/, solution/, tests/, run.py
-  week2/ - week5/   scaffolds for what's coming
+  week2/ - week5/   coming soon
   assets/           banner (drawn by assets/make_banner.py) and the checklist graphic
   requirements.txt  duckdb, pandas, pytest
 ```
