@@ -1,7 +1,7 @@
 """Repo-wide pytest options.
 
-    python -m pytest week1                    tests the reference solution
-    python -m pytest week1 --target starter   tests your code in week1/starter/
+    python -m pytest part1                    tests the reference solution
+    python -m pytest part1 --target starter   tests your code in part1/starter/
 """
 
 import pytest

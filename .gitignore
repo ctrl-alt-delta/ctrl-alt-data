@@ -10,7 +10,7 @@ venv/
 env/
 
 # Exercise output: landing files, DuckDB warehouses, alerts.log
-week*/.work/
+part*/.work/
 *.duckdb
 *.duckdb.wal
 

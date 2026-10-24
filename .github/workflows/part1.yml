@@ -1,0 +1,50 @@
+name: part1
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Python ${{ matrix.python-version }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+        python-version: ["3.10", "3.11", "3.12", "3.13"]
+        include:
+          - os: windows-latest
+            python-version: "3.12"
+          - os: macos-latest
+            python-version: "3.12"
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install
+        run: python -m pip install -r requirements.txt
+      - name: Test the solution
+        run: python -m pytest part1 -v
+      - name: Quickstart runs
+        run: python part1/run.py
+      - name: A broken feed is stopped
+        shell: bash
+        run: |
+          if python part1/run.py --break date-format; then
+            echo "expected the date-format break to stop the load"; exit 1
+          fi
+      - name: Starter still has its TODOs
+        shell: bash
+        run: |
+          set +e
+          python part1/run.py --target starter
+          code=$?
+          set -e
+          if [ "$code" -ne 2 ]; then
+            echo "expected exit 2 (TODOs) from the untouched starter, got $code"; exit 1
+          fi

@@ -98,7 +98,7 @@ def main() -> None:
     d.rounded_rectangle(box, radius=10 * S, fill=NAVY_2, outline="#334155", width=2)
     mono = font(a.mono, 17, "Medium")
     d.text((box[0] + 20 * S, box[1] + 15 * S), "$", font=mono, fill=TEAL_LIGHT)
-    d.text((box[0] + 42 * S, box[1] + 15 * S), "python week1/run.py", font=mono, fill=WHITE)
+    d.text((box[0] + 42 * S, box[1] + 15 * S), "python part1/run.py", font=mono, fill=WHITE)
 
     d.rectangle([0, H - 6 * S, W, H], fill=TEAL)
     img.save(a.out, optimize=True)
