@@ -1,4 +1,4 @@
-# Week 1: Pipelines, Prod & Panics
+# Track I · Part 1: Pipelines, Prod & Panics
 
 **The exercise:** build a tiny pipeline that reads a messy CSV, cleans it and loads it into DuckDB. Then break it the way upstream systems really break things, and add the checks that would have caught it.
 
@@ -16,7 +16,7 @@ That runs the finished solution end to end. Everything else on this page is you 
 
 ## The five questions, in code
 
-The Week 1 article closes with the five questions I run through before building any pipeline. Here, each one is something you can open, run or break.
+The Part 1 article closes with the five questions I run through before building any pipeline. Here, each one is something you can open, run or break.
 
 | Question | Where it lives in this exercise |
 |---|---|

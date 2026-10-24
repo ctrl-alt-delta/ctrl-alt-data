@@ -2,7 +2,7 @@
 
 The card is plain YAML, but only a small subset of it: nested mappings,
 ``key: value`` scalars, ``[a, b]`` inline lists and ``#`` comments. This
-loader handles exactly that subset so Week 1 needs no YAML library.
+loader handles exactly that subset so Part 1 needs no YAML library.
 In a real project, use PyYAML (``yaml.safe_load``) instead.
 """
 

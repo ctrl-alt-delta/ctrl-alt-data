@@ -1,4 +1,4 @@
-"""Week 1 solution: Q4, who gets paged.
+"""Part 1 solution: Q4, who gets paged.
 
 A real hook would call your paging or chat tool. This one writes a JSON line
 to alerts.log and prints it, which is enough to test and easy to swap out.

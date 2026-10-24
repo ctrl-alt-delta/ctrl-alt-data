@@ -1,4 +1,4 @@
-"""Week 1 starter: Q4, who gets paged."""
+"""Part 1 starter: Q4, who gets paged."""
 
 from __future__ import annotations
 

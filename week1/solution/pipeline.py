@@ -1,4 +1,4 @@
-"""Week 1 solution: CSV -> clean -> DuckDB."""
+"""Part 1 solution: CSV -> clean -> DuckDB."""
 
 from __future__ import annotations
 

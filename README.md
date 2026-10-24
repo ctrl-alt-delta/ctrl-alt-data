@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.png" alt="CTRL+ALT+DATA: Rebooting Data Engineering. Companion code for the 5-week series by Kushagra Soni" width="100%">
+  <img src="assets/banner.png" alt="CTRL+ALT+DATA: Rebooting Data Engineering. Companion code for the 14-part series across 3 tracks by Kushagra Soni" width="100%">
 </p>
 
 # CTRL+ALT+DATA
@@ -8,7 +8,7 @@
 
 If you hesitated, this repo is for you.
 
-I'm Kushagra Soni, a Solutions Architect. I design data and AI platforms for banks, which mostly teaches you what breaks, when it breaks, and who gets the phone call. CTRL+ALT+DATA is my five-week series on Medium about the job behind the dashboards. The articles explain the ideas. This repo is where you get your hands dirty. Each week comes with a small exercise you run on a laptop, break on purpose, and fix. Week 1 is ready now and takes under half an hour.
+I'm Kushagra Soni, a Solutions Architect. I design data and AI platforms for banks, which mostly teaches you what breaks, when it breaks, and who gets the phone call. CTRL+ALT+DATA is my 14-part series across three tracks on Medium about the job behind the dashboards. The articles explain the ideas. This repo is where you get your hands dirty. Each part comes with a small exercise you run on a laptop, break on purpose, and fix. Part 1 is ready now and takes under half an hour.
 
 Everything here runs offline with Python and three packages.
 
@@ -22,19 +22,40 @@ Monday, 07:40, your job runs. Green tick. No errors. At 08:00 the dashboard refr
 
 What happened? The parser couldn't read the new dates and turned them into nulls. The cleaning step did exactly what it was told and dropped every row without a date. Every line of code worked. The pipeline was still wrong.
 
-One check saying "expected at least 450 rows, got 291" would have stopped the load at 07:40 and paged one person, instead of surprising twenty at 08:05. In Week 1 you cause that incident yourself, in a sandbox, and then write the check.
+One check saying "expected at least 450 rows, got 291" would have stopped the load at 07:40 and paged one person, instead of surprising twenty at 08:05. In Part 1 you cause that incident yourself, in a sandbox, and then write the check.
 
 ## The series
 
-| Week | Topic | Status | Article |
-|---|---|---|---|
-| [1](week1/) | **Pipelines, Prod & Panics**: what data engineers actually do | Exercise ready | [Read on Medium](https://medium.com/@sonikushagra/week-1-pipelines-prod-panics-f46c95d39f9a) |
-| [2](week2/) | **Batches, Streams & Screams**: batch vs streaming, ETL vs ELT | Coming soon | _link coming_ |
-| [3](week3/) | **Warehouses, Lakes & Lakehouses**: where Apache Iceberg fits | Coming soon | _link coming_ |
-| [4](week4/) | **Checks, Tests & Trust**: data quality, write-audit-publish | Coming soon | _link coming_ |
-| [5](week5/) | **Agents, Audits & Accountability**: AI agents on your data | Coming soon | _link coming_ |
+Fourteen parts across three tracks. Article links and exercises land here as each part is published. Follow the whole series on Medium: [CTRL+ALT+DATA reading list](https://medium.com/@sonikushagra/list/ctrlaltdata-rebooting-data-engineering-999754cc543a).
 
-Article links get added here as each one is published. Follow the whole series on Medium: [CTRL+ALT+DATA reading list](https://medium.com/@sonikushagra/list/ctrlaltdata-rebooting-data-engineering-999754cc543a).
+### Track I — Core Foundations: From Raw Data to Safe Agents
+
+| Part | Topic | Status | Article |
+|---|---|---|---|
+| [Part 1](week1/) | **Pipelines, Prod & Panics**: what data engineers actually do | Exercise ready | [Read on Medium](https://medium.com/@sonikushagra/week-1-pipelines-prod-panics-f46c95d39f9a) |
+| [Part 2](week2/) | **Batches, Streams & Screams**: ingestion, batch vs streaming, ETL vs ELT | Coming soon | _link coming_ |
+| [Part 3](week3/) | **Warehouses, Lakes & Lakehouses**: open table formats & Apache Iceberg | Coming soon | _link coming_ |
+| [Part 4](week4/) | **Checks, Tests & Trust**: data contracts & Write-Audit-Publish | Coming soon | _link coming_ |
+| [Part 5](week5/) | **Agents, Audits & Accountability**: governed AI agents on data | Coming soon | _link coming_ |
+
+### Track II — Production Reality: Operating at Bank Scale
+
+| Part | Topic | Status | Article |
+|---|---|---|---|
+| Part 6 | **Schemas, Drift & Disasters**: schema evolution & upstream breaks | Coming soon | _link coming_ |
+| Part 7 | **Orchestrators, Schedules & SLAs**: DAGs, retries, idempotent backfills | Coming soon | _link coming_ |
+| Part 8 | **Catalogs, Lineage & Locks**: Polaris catalog, column lineage, BCBS 239 | Coming soon | _link coming_ |
+| Part 9 | **Compaction, Costs & Cold Sweat**: small-file problem, snapshot expiry | Coming soon | _link coming_ |
+| Part 10 | **Metrics, Traces & Midnight Pages**: data + pipeline observability | Coming soon | _link coming_ |
+
+### Track III — Unstructured & Agentic Data Engineering
+
+| Part | Topic | Status | Article |
+|---|---|---|---|
+| Part 11 | **PDFs, Tables & Trouble**: Document AI into Iceberg lakehouses | Coming soon | _link coming_ |
+| Part 12 | **Chunks, Vectors & Verifiability**: hybrid knowledge search with citations | Coming soon | _link coming_ |
+| Part 13 | **Prompts, Policies & Permissions**: row/column security & guardrails for agents | Coming soon | _link coming_ |
+| Part 14 | **Runbooks, Rollbacks & Regulators**: exam-ready audit trails | Coming soon | _link coming_ |
 
 ## Quickstart
 
@@ -64,7 +85,7 @@ python week1/run.py
 
 **About the data:** the transactions are generated by `week1/data/generate.py` from a fixed seed, so everyone gets the same file. The accounts, amounts and partner are made up. There are no real customers and no company data anywhere in this repo.
 
-The last command builds the finished Week 1 pipeline and should end with `LOADED: 486 rows`. Now test it:
+The last command builds the finished Part 1 pipeline and should end with `LOADED: 486 rows`. Now test it:
 
 ```bash
 python -m pytest week1
@@ -77,7 +98,7 @@ uv venv
 uv pip install -r requirements.txt
 ```
 
-## Week 1 in four steps
+## Part 1 in four steps
 
 The full instructions, with the commands for each step, are in [week1/README.md](week1/README.md).
 
@@ -90,7 +111,7 @@ Experienced? There's a "go further" section with a schema contract, an allowed-v
 
 ## The five questions
 
-Week 1 closes with the five questions I run through before building any pipeline. The exercise turns each one into something in the code: a field in the pipeline card, a check, or a decision the runner makes. The [mapping is in the Week 1 README](week1/README.md#the-five-questions-in-code).
+Part 1 closes with the five questions I run through before building any pipeline. The exercise turns each one into something in the code: a field in the pipeline card, a check, or a decision the runner makes. The [mapping is in the Part 1 README](week1/README.md#the-five-questions-in-code).
 
 <p align="center">
   <img src="assets/week1-pipeline-checklist.png" alt="Before your next pipeline: five questions" width="420">
@@ -98,7 +119,7 @@ Week 1 closes with the five questions I run through before building any pipeline
 
 ## Starter vs solution
 
-Every week has the same two folders:
+Every part has the same two folders:
 
 - **`starter/`** is yours. It has the boring parts done and clear `TODO`s where the thinking goes.
 - **`solution/`** is my version. It passes every test.
@@ -117,8 +138,8 @@ Your starter tests will fail at first. That's the to-do list.
 
 ```
 ctrl-alt-data/
-  week1/            the full exercise: starter/, solution/, tests/, run.py
-  week2/ - week5/   coming soon
+  week1/            Part 1 exercise: starter/, solution/, tests/, run.py
+  week2/ - week5/   Track I scaffolds (Parts 2–5); Tracks II & III (Parts 6–14) coming soon
   assets/           banner (drawn by assets/make_banner.py) and the checklist graphic
   requirements.txt  duckdb, pandas, pytest
 ```

@@ -1,4 +1,4 @@
-"""Generate the Week 1 feed: a messy week of transactions from a partner.
+"""Generate the Part 1 feed: a messy week of transactions from a partner.
 
 Everything here is made up: random account ids, random amounts, a fictional
 "partner payments" feed. No real customer, bank or company data.

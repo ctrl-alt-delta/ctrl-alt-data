@@ -1,4 +1,4 @@
-"""The Week 1 orchestration: extract -> schema check -> clean -> checks -> load.
+"""The Part 1 orchestration: extract -> schema check -> clean -> checks -> load.
 
 This file is shared by starter/ and solution/ and is not part of the exercise.
 It reads the pipeline card, runs the checks BEFORE loading, and does what the

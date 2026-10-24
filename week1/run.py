@@ -1,4 +1,4 @@
-"""Week 1 quickstart: one command to run, break, query and test the pipeline.
+"""Part 1 quickstart: one command to run, break, query and test the pipeline.
 
     python week1/run.py                              run the solution on a clean feed
     python week1/run.py --target starter             run YOUR code (week1/starter/)
@@ -35,7 +35,7 @@ STAGES = ("warmup", "core", "fix", "further")
 def parse_args(argv: list[str] | None) -> argparse.Namespace:
     p = argparse.ArgumentParser(
         prog="python week1/run.py",
-        description="CTRL+ALT+DATA week 1: CSV -> clean -> checks -> DuckDB",
+        description="CTRL+ALT+DATA Track I · Part 1: CSV -> clean -> checks -> DuckDB",
     )
     p.add_argument("--target", choices=TARGETS, default="solution", help="whose code to run (default: solution)")
     p.add_argument("--break", dest="break_mode", choices=BREAK_MODES, help="simulate an upstream change")
@@ -87,7 +87,7 @@ def main(argv: list[str] | None = None) -> int:
     as_of = date.fromisoformat(args.as_of)
     landing = write_csv(workdir / "landing" / "transactions.csv", break_mode=args.break_mode)
 
-    print(f"CTRL+ALT+DATA week 1 | target={args.target} | feed={args.break_mode or 'normal'} | as-of={as_of}")
+    print(f"CTRL+ALT+DATA part 1 | target={args.target} | feed={args.break_mode or 'normal'} | as-of={as_of}")
     target = load_target(args.target)
     before = table_count(db_path)
     try:

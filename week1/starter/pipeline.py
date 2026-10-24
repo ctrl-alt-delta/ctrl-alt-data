@@ -1,4 +1,4 @@
-"""Week 1 starter: CSV -> clean -> DuckDB.
+"""Part 1 starter: CSV -> clean -> DuckDB.
 
 Fill in TODO 1-5, then run:
     python week1/run.py --target starter

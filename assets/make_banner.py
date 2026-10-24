@@ -3,7 +3,7 @@
     pip install pillow
     python assets/make_banner.py --font path/to/Inter-Variable.ttf --mono path/to/Mono.ttf
 
-Colours are the series palette, taken from the Week 1 checklist graphic:
+Colours are the series palette, taken from the Part 1 checklist graphic:
 navy #0F172A, teal #0D9488, light teal #5EEAD4, slate #CBD5E1 / #64748B.
 Without --font it falls back to Pillow's built-in font (works, looks plainer).
 """
@@ -70,12 +70,12 @@ def main() -> None:
     d.text((left, 172 * S), "Data Engineering", font=font(a.font, 64, "ExtraBold"), fill=TEAL_LIGHT)
     d.text(
         (left, 262 * S),
-        "Companion code for the 5-week series by Kushagra Soni",
+        "Companion code for the 14-part series across 3 tracks by Kushagra Soni",
         font=font(a.font, 22, "Medium"),
         fill=SLATE,
     )
 
-    # the five weeks as a pipeline: week 1 lit, the rest waiting
+    # Track I (Parts 1-5) as a pipeline: Part 1 lit, the rest waiting
     x0, x1, y = 760 * S, 1190 * S, 150 * S
     d.line([(x0, y), (x1, y)], fill=SLATE_DARK, width=4 * S)
     labels = ["Pipelines", "Batch vs stream", "Lakehouse", "Quality", "AI agents"]
@@ -87,7 +87,7 @@ def main() -> None:
             d.ellipse([cx - r, y - r, cx + r, y + r], fill=TEAL, outline=TEAL_LIGHT, width=3 * S)
         else:
             d.ellipse([cx - r, y - r, cx + r, y + r], fill=NAVY, outline=SLATE_DARK, width=3 * S)
-        wk = f"W{i + 1}"
+        wk = f"P{i + 1}"
         wf = font(a.font, 15, "Bold")
         d.text((cx - d.textlength(wk, font=wf) / 2, y - 9 * S), wk, font=wf, fill=WHITE if i == 0 else SLATE)
         d.text((cx - d.textlength(label, font=small) / 2, y + 30 * S), label, font=small,

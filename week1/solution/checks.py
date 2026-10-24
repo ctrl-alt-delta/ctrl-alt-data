@@ -1,4 +1,4 @@
-"""Week 1 solution: checks that run BEFORE anything is loaded.
+"""Part 1 solution: checks that run BEFORE anything is loaded.
 
 Every check returns None when it passes, or a sentence a tired human can act on.
 """
