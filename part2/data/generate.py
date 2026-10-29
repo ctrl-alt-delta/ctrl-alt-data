@@ -2,7 +2,7 @@
 
 Produces 600 payment events across a midnight settlement cutoff (2026-10-25 -> 2026-10-26):
   - 555 unique valid card & ACH events (including 45 late-arriving pre-midnight swipes
-    that arrive after 00:00 UTC, and 142 multi-currency / fee-sensitive rows)
+    that arrive after 00:00 UTC, and 160 multi-currency CAD/EUR/GBP rows)
   - 30 gateway duplicate retries (same txn_id delivered twice after an ACK timeout)
   - 15 poison-pill / malformed payloads (8 missing account_id, 7 corrupt payload tokens)
 

@@ -3,7 +3,7 @@
 Shows the operational difference between:
 - **ETL (Transform-Before-Load):** computes `amount_usd` and `net_amount_usd` in memory and writes only
   the transformed columns into the warehouse (no raw `bronze_payments` table). When a bug in the FX/fee
-  calculation corrupts 142 rows, the original raw amounts and FX rates are gone from local storage.
+  calculation corrupts all 160 non-USD rows, the original raw amounts and FX rates are gone from local storage.
 - **ELT (Load-Raw-Then-Transform in DuckDB):** lands immutable raw payloads in `bronze_payments` first,
   then derives `silver_payments` and `gold_daily_settlement` via SQL. When the FX/fee bug is fixed,
   replaying from `bronze_payments` restores all 555 rows in milliseconds.
@@ -22,7 +22,8 @@ def compute_fx_and_fees(df: pd.DataFrame, *, fx_bug: bool = False) -> pd.DataFra
 
     When `fx_bug=True`, simulates a realistic production bug where `fee_bps` (basis points, e.g. 150)
     is subtracted as raw dollars (`amount_usd - fee_bps`) on non-USD transactions instead of
-    `amount_usd * (fee_bps / 10000.0)`, corrupting all 142 non-USD rows (driving many negative).
+    `amount_usd * (fee_bps / 10000.0)`, corrupting all 160 non-USD rows (the CAD/EUR/GBP rows among
+    the 555 deduplicated valid events), driving many negative.
     """
     out = df.copy()
     amt = out["amount"].astype(float)
