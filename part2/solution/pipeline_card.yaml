@@ -1,0 +1,26 @@
+# Pipeline Card — Part 2: Batches, Streams & Screams
+# Contract for the event-time watermark + DuckDB ELT settlement pipeline.
+
+name: payment_settlement
+owner: data-platform-oncall
+freshness_sla_minutes: 15
+watermark_minutes: 180
+grain: [txn_id]
+required_fields:
+  - txn_id
+  - account_id
+  - merchant_id
+  - rail
+  - amount
+  - currency
+  - fx_rate_to_usd
+  - fee_bps
+  - event_time
+  - arrived_at
+allowed_currencies: [USD, EUR, GBP, CAD]
+tables:
+  bronze: bronze_payments
+  silver: silver_payments
+  gold: gold_daily_settlement
+  quarantine: quarantine_dlq
+bad_run_policy: keep_last_good_and_page_owner

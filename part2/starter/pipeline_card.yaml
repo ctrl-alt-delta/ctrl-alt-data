@@ -1,0 +1,26 @@
+# Pipeline Card — Part 2: Batches, Streams & Screams (Starter)
+# TODO: Fill in the owner, watermark window, grain, and table names before running.
+
+name: payment_settlement
+owner: TODO_TEAM_HANDLE
+freshness_sla_minutes: 15
+watermark_minutes: 0
+grain: []
+required_fields:
+  - txn_id
+  - account_id
+  - merchant_id
+  - rail
+  - amount
+  - currency
+  - fx_rate_to_usd
+  - fee_bps
+  - event_time
+  - arrived_at
+allowed_currencies: [USD, EUR, GBP, CAD]
+tables:
+  bronze: TODO_BRONZE_TABLE
+  silver: silver_payments
+  gold: gold_daily_settlement
+  quarantine: TODO_QUARANTINE_TABLE
+bad_run_policy: keep_last_good_and_page_owner
